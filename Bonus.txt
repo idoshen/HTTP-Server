@@ -1,0 +1,4 @@
+Bonus Features Implemented:
+
+Terms and Conditions Download: We have implemented a feature allowing users to download the terms and conditions through our server application. Users can access the terms and conditions by clicking the 'View Terms' button that will download terms.txt. The terms and conditions file is stored in the "www.lab.html" directory within the server root.
+

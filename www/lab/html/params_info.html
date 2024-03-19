@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameters Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .flashy {
+            font-size: 20px;
+            background-color: #ff0;
+            border: 2px dashed red;
+            padding: 10px;
+            margin-top: 20px;
+            animation: flash 1s infinite alternate;
+        }
+        @keyframes flash {
+            from { background-color: #ff0; }
+            to { background-color: #f00; color: #fff; }
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="back-button" onclick="window.location.href='index.html'">Go Back</button>
+    <h1>Submitted Parameters</h1>
+    <div class="flashy">Parameters Info</div>
+    <!-- Dynamic rows based on submitted parameters -->
+</body>
+</html>

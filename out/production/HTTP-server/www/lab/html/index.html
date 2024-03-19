@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Computer Networks 2023: Exercise 1</title>
+  <style>
+    /* Moving title in blue color */
+    @keyframes moveTitle {
+        0% {
+            transform: translateX(-10%);
+        }
+        100% {
+            transform: translateX(10%);
+        }
+    }
+    .center{
+        display: flex; justify-content: center;
+    }
+
+    img {
+      width: 300px;
+      height: 300px;
+    }
+
+    form {
+        margin-top: 20px;
+        display: table;
+    }
+
+    label, input, textarea {
+        display: table-row;
+        padding: 5px;
+    }
+
+    input, textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+    <h1 style="color: blue; animation: moveTitle 2s ease-in-out infinite alternate;" class="center">Computer Networks 2023: Exercise 1</h1>
+
+    <h2 style="color: red;" class="center">Ido Shenbach and Yotam Peled</h2>
+
+    <div class="center">
+        <img src= "./bmp.bmp" alt="bmp">
+        <img src= "./png.png" alt="png">
+<!--        <img src= "./jpq.jpg" alt="jpg">-->
+        <img src= "./gif.gif" alt="gif">
+    </div>
+
+    <p><a href="https://moodle.runi.ac.il/2024/course/view.php?id=2401572" class="center">Course Website</a></p>
+
+    <p><a href="https://google.com" class="center">Favorite Website</a></p>
+
+    <hr>
+
+    <div class="center">
+        <form action="http://localhost:8080/index.html" method="post" >
+            <label for="sender">Sender:</label>
+            <input type="text" id="sender" name="sender" required>
+
+            <label for="receiver">Receiver:</label>
+            <input type="text" id="receiver" name="receiver" >
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" ></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

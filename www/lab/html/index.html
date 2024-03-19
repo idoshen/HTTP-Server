@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Computer Networks 2023: Exercise 1</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <style>
+        /* Moving title in blue color */
+        @keyframes moveTitle {
+            0% {
+                transform: translateX(-10%);
+            }
+            100% {
+                transform: translateX(10%);
+            }
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Ensure responsiveness */
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center; /* Centers the children (form boxes + divider) in the container */
+            align-items: flex-start; /* Align the items at the start of the cross axis */
+            flex-wrap: wrap; /* Allow wrapping if necessary */
+        }
+
+        .form-box {
+            width: calc(50% - 20px); /* Adjust width to account for the divider and some space */
+            padding: 20px; /* Padding inside the form boxes */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the form contents */
+        }
+
+        .divider {
+            height: auto; /* Make the divider take the height of the form boxes */
+            align-self: stretch; /* Stretch the divider to the height of its container */
+            background-color: #000;
+            width: 2px;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+        }
+
+        form {
+            margin-top: 20px;
+            display: table;
+        }
+
+        label, input, textarea, .checkbox-container {
+            display: table-row;
+            padding: 5px;
+        }
+
+        input[type="text"], input[type="checkbox"] + label, textarea {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+                /* Custom checkbox style */
+        .checkbox-container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 22px;
+            user-select: none;
+        }
+
+        .checkbox-container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 4px;
+        }
+
+        .checkbox-container:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+
+        .checkbox-container input:checked ~ .checkmark {
+            background-color: #2196F3;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .checkbox-container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .checkbox-container .checkmark:after {
+            left: 9px;
+            top: 5px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+
+        .terms-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 15px;
+            background-color: #f2f2f2; /* Light grey background */
+            color: #333; /* Dark text color */
+            text-align: center;
+            text-decoration: none; /* Remove underline from anchor text */
+            border: 1px solid #ddd; /* Add a subtle border */
+            border-radius: 5px; /* Rounded corners for aesthetics */
+            cursor: pointer; /* Change mouse cursor to signify clickable */
+        }
+
+        .terms-button:hover {
+            background-color: #e7e7e7; /* Slightly darker grey on hover */
+        }
+
+    </style>
+</head>
+<body>
+<button class="back-button" onclick="window.location.href='params_info.html'">View Params</button>
+<h1 style="color: blue; animation: moveTitle 2s ease-in-out infinite alternate;" class="center">Computer Networks 2023: Exercise 1</h1>
+<h2 style="color: red;" class="center">Ido Shenbach and Yotam Peled</h2>
+
+<div class="center">
+    <img src="./bmp.bmp" alt="bmp">
+    <img src="./png.png" alt="png">
+    <img src="./jpg.jpg" alt="jpg">
+    <img src="./gif.gif" alt="gif">
+</div>
+
+<p><a href="https://moodle.runi.ac.il/2024/course/view.php?id=2401572" class="center">Course Website</a></p>
+
+<p><a href="https://google.com" class="center">Favorite Website</a></p>
+
+<hr>
+
+<div class="form-container center">
+    <!-- First Form Box -->
+    <div class="form-box">
+        <form action="http://localhost:8080/params_info.html" method="post">
+            <label for="sender">Sender:</label>
+            <input type="text" id="sender" name="sender" required>
+
+            <label for="receiver">Receiver:</label>
+            <input type="text" id="receiver" name="receiver" required>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Second Form Box -->
+    <div class="form-box">
+        <form action="http://localhost:8080/params_info.html" method="post">
+            <label class="checkbox-container">Agree to Terms
+                <input type="hidden" name="agree" value="No">
+                <input type="checkbox" id="agree" name="agree" value="Yes">
+                <span class="checkmark"></span>
+            </label>
+
+            <a href="./terms.txt" class="terms-button">View Terms</a>
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>
